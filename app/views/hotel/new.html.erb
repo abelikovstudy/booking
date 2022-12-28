@@ -1,0 +1,15 @@
+<%=form_with model: @hotel do |f| %>
+  <p> Title</p>
+  <%= f.text_field :title, required: true, minlength: 5 %> 
+  <p> Addres</p>
+  <%= f.text_field :addres, required: true, minlength: 10 %> 
+  <p> Description</p>
+  <%= f.text_area :description %>  
+  <p> Price</p>
+  <%= f.text_field :price, required: true%> 
+  <p> Email</p>
+  <%= f.text_field :email %> 
+  <p> Phone</p>
+  <%= f.text_field :phone, required: true, minlength: 11 %> 
+  <%= f.submit "Send"%>
+<% end %>
