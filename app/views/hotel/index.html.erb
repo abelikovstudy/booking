@@ -1,4 +1,73 @@
-<h1> Hotel list</h1>
+<div class="page">
+  <header class="header">
+    <div class="logo__container">
+      <img class="logo" src="./logo.png" alt="logo">
+      <p class="logo__title">F.Y.P</p>
+    </div>
 
-<%= @hotels.each do |item| %>
-    <% end %>
+    <div class="header__buttons">
+      <button class="button-reg">    <%= link_to 'Регистрация', users_new_path %></button>
+      <button class="button-join">   <%= link_to 'Войти', sessions_new_path %></button>
+      <% if current_user.present? %>
+      <button class="button-join">   <%= link_to 'Разместить объявление', hotels_new_path %></button>
+      <% else %>
+      <% end %>
+
+    </div>
+  </header>
+
+  <main class="content">
+    <section class="information">
+      <div class="leftBlock-information">
+        <h1 class="information-title">Find Your Place</h1>
+        <p class="information-text">Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem
+          Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный
+          печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов.
+          Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн.
+          Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в
+          более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется
+          Lorem Ipsum.</p>
+      </div>
+      <img class="bigImageInfo" src="./buildInfo.png" alt="">
+    </section>
+
+
+    <section class="offers">
+      <div class="offers__header">
+        <h1 class="offers__title"> Hotel list</h1>
+        <div class="offers__buttons">
+        </div>
+      </div>
+      <ul class="offers__list">
+      <% @hotels.each do |item| %>
+        <li class="posts__post">
+          <img class="posts__image">
+          <div class="posts__footer">
+            <h2 class="posts__title"><%= item.title %></h2>
+          </div>
+          <div class="posts__info">
+
+          </div>
+        </li>
+        <% end %>
+      </ul>
+    </section>
+  </main>
+
+</div>
+
+
+
+
+<template class="post-template">
+
+  <li class="posts__post">
+    <img class="posts__image">
+    <div class="posts__footer">
+      <h2 class="posts__title"> </h2>
+    </div>
+    <div class="posts__info">
+
+    </div>
+  </li>
+</template>

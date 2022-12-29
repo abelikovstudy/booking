@@ -1,15 +1,31 @@
-<%=form_with model: @hotel do |f| %>
-  <p> Title</p>
-  <%= f.text_field :title, required: true, minlength: 5 %> 
-  <p> Addres</p>
-  <%= f.text_field :addres, required: true, minlength: 10 %> 
-  <p> Description</p>
-  <%= f.text_area :description %>  
-  <p> Price</p>
-  <%= f.text_field :price, required: true%> 
-  <p> Email</p>
-  <%= f.text_field :email %> 
-  <p> Phone</p>
-  <%= f.text_field :phone, required: true, minlength: 11 %> 
-  <%= f.submit "Send"%>
-<% end %>
+<section class="popup popup_opened">
+  <div class="popup__container" id="popup__addPost-container">
+    <%=form_with model: @hotel do |f| %>
+    <div class="popup__person-information" name="personAddPostForm" novalidate>
+      <h2 class="popup__title">Новое место</h2>
+
+
+        <%= f.text_field :title, required: true, minlength: 5, class: 'popup__input popup__input_type_name', placeholder: "Название" %>
+
+
+        <%= f.text_field :addres, required: true, minlength: 10, class: 'popup__input popup__input_type_name', placeholder: "Адрес" %>
+
+
+        <%= f.text_area :description, class: 'popup__input popup__input_type_name', placeholder: "Описание" %>
+
+
+        <%= f.text_field :price, required: true, class: 'popup__input popup__input_type_name', placeholder: "Цена (за ночь)"%>
+
+
+        <%= f.text_field :email, class: 'popup__input popup__input_type_name', placeholder: "Email" %>
+
+
+        <%= f.text_field :phone, required: true, minlength: 11, class: 'popup__input popup__input_type_name', placeholder: "Номер телефона" %>
+
+
+        <%= f.submit "Сохранить", class: 'button button-save'%>
+
+    </div>
+    <% end %>
+  </div>
+</section>
