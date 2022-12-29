@@ -41,7 +41,13 @@
       <ul class="offers__list">
       <% @hotels.each do |item| %>
         <li class="posts__post">
-          <img class="posts__image">
+        <div class="posts__header">
+        <p><%= item.addres %></p>
+        <p><%= item.description %></p>
+        <p><%= item.price %></p>
+        <p><%= item.email %></p>
+        <p><%= item.phone %></p>
+      </div>
           <div class="posts__footer">
             <h2 class="posts__title"><%= item.title %></h2>
           </div>
